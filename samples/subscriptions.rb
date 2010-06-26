@@ -46,6 +46,9 @@ subscription.save
 subscription.charge(:amount => 10.00, :memo => 'Extra service')
 # => #<Net::HTTPCreated>
 
+# Give a credit to an existing subscription
+subscription.credit(:amount_in_cents => 1000, :memo => 'Free subscription time')
+# => #<Net::HTTPCreated>
 
 # Cancel a subscription
 subscription.cancel

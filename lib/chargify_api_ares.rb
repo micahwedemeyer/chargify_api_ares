@@ -121,6 +121,13 @@ module Chargify
       post :charges, :charge => attrs
     end
     
+    # Give a credit on an existing subscription.
+    # For more information, see the API docs available at
+    # http://support.chargify.com/faqs/api/api-credits
+    def credit(attrs = {})
+      post :credits, :credit => attrs
+    end
+    
     def transactions()
       Transaction.find(:all, :params =>{:subscription_id => self.id})
     end
